@@ -1,6 +1,7 @@
 import User from "../models/userModels.js";
 import bcrypt from "bcryptjs";
 import { generateToken } from "../config/generateToken.js";
+import cloudinary from "../config/cloudinary.js";
 
 export const signup = async (req, res) => {
     try {
@@ -90,6 +91,7 @@ export const updateProfile = async (req, res) => {
     const { profilePic } = req.body;
     const userId = req.user._id;
 
+    
     if (!profilePic) {
       return res.status(400).json({ message: "Profile pic is required" });
     }
