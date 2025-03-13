@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import SigninPage from "./pages/SigninPage";
-import SettingsPage from "./pages/settingsPage";
+import SettingsPage from "./pages/SettingsPage"
 import ProfilePage from "./pages/ProfilePage";
 import { useAuthStore } from "./zustand/useAuthStore";
 import { Loader } from "lucide-react";
