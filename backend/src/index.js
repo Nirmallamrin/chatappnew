@@ -7,9 +7,11 @@ import connect from "./config/db.js";
 import cookieParser from "cookie-parser";
 import cors from "cors"
 
+import { app, server } from "./config/socket.js";
+
 connect()
+
 dotenv.config()
-const app = express()
 
 
 const PORT = process.env.PORT
@@ -30,6 +32,6 @@ app.get("/", (req, res) => {
     res.send("Chat New")
 })
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
 })

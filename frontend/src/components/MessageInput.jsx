@@ -69,6 +69,25 @@ const MessageInput = () => {
         </div>
       )}
       <form onSubmit={handleSendMessage} className="flex items-center gap-2">
+        {/* File Upload Button on Left Side */}
+        <input
+          type="file"
+          accept="image/*"
+          className="hidden"
+          ref={fileInputRef}
+          onChange={handleImageChange}
+        />
+        <button
+          type="button"
+          className={`btn btn-circle ${
+            imagePreview ? "text-emerald-500" : "text-zinc-400"
+          }`}
+          onClick={() => fileInputRef.current?.click()}
+        >
+          <Image size={20} />
+        </button>
+
+        {/* Message Input */}
         <div className="flex-1 flex gap-2">
           <input
             type="text"
@@ -77,29 +96,15 @@ const MessageInput = () => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <input
-            type="file"
-            accept="image/*"
-            className="hidden"
-            ref={fileInputRef}
-            onChange={handleImageChange}
-          />
-
-          <button
-            type="button"
-            className={`hidden sm:flex btn btn-circle
-             ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
-            onClick={() => fileInputRef.current?.click()}
-          >
-            <Image size={20} />
-          </button>
         </div>
+
+        {/* Send Button */}
         <button
           type="submit"
-          className="btn btn btn-circle "
+          className="btn btn-circle"
           disabled={!text.trim() && !imagePreview}
         >
-          <SendHorizontal size={22} className='text-rose-500 '/>
+          <SendHorizontal size={22} className="text-rose-500" />
         </button>
       </form>
     </div>

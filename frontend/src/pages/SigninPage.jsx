@@ -13,7 +13,7 @@ const SigninPage = () => {
   });
   
 
-  const { signin, isLoggingIn } = useAuthStore();
+  const { signin, isSigningIn } = useAuthStore();
   
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -94,9 +94,9 @@ const SigninPage = () => {
             <button
               type="submit"
               className="btn btn-primary w-full"
-              disabled={isLoggingIn}
+              disabled={isSigningIn}
             >
-              {isLoggingIn ? (
+              {isSigningIn ? (
                 <>
                   <Loader2 className="h-5 w-5 animate-spin" />
                   Loading...
@@ -116,6 +116,33 @@ const SigninPage = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="hidden lg:flex flex-col justify-center items-center bg-dark text-rose-400 p-10">
+        <h2 className="text-3xl font-bold text-center">
+          Join Our Thriving Community
+        </h2>
+        <p className="text-lg text-center mt-4">
+          Connect, collaborate, and grow with like-minded individuals.
+        </p>
+
+        <Link className="mt-6 px-6 py-3 bg-rose-500 text-white text-lg font-semibold rounded-lg shadow hover:bg-rose-600 transition-all">
+          Join Our Community 🚀
+        </Link>
+
+        <ul className="mt-6 space-y-3">
+          <li className="flex items-center gap-2">
+            ✅ Exclusive access to discussions
+          </li>
+          <li className="flex items-center gap-2">
+            ✅ Network with professionals
+          </li>
+          <li className="flex items-center gap-2">
+            ✅ Get personalized recommendations
+          </li>
+          <li className="flex items-center gap-2">
+            ✅ Stay updated with industry trends
+          </li>
+        </ul>
       </div>
     </div>
   );
