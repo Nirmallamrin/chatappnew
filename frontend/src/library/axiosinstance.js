@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://fullstackchatapp-dbnt.onrender.com",
+  baseURL: "http://localhost:3001",
   withCredentials: true,
 });

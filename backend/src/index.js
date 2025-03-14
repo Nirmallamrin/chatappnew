@@ -9,12 +9,14 @@ import cors from "cors"
 
 import { app, server } from "./config/socket.js";
 
+
 connect()
 
 dotenv.config()
 
 
 const PORT = process.env.PORT;
+
 
 app.use(express.json());
 app.use(cookieParser());
