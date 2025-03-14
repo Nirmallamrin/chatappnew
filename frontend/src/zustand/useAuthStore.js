@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://fullstackchatapp-dbnt.onrender.com";
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
